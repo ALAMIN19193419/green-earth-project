@@ -14,54 +14,72 @@
 </head>
 <body class="bg-[#F8F8F8]">
 
-    <header class="bg-[#1e5d26] shadow-md fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center h-[91px]">
-            <div class="flex items-center space-x-2">
-                <a href="#" class="text-3xl font-bold text-white">Green Earth</a>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8 text-lg font-medium text-white">
-                    <li><a href="#" class="hover:text-gray-300">About</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Gallery</a></li>
-                    <li><a href="#plant" class="hover:text-gray-300">Plant a Tree</a></li>
+    <header class="bg-[#1e5c3e] w-full shadow-md fixed top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-10 h-[91px] flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-white">Green Earth</a>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-8 text-white">
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Gallery</a></li>
+                    <li><a href="#plant" class="hover:underline">Plant a Tree</a></li>
                 </ul>
+                <a href="#plant" class="btn bg-[#f9c522] text-black border-none hover:bg-yellow-400">Plant a Tree</a>
             </nav>
-            <a href="#plant-form" class="btn bg-[#ffc107] text-[#1e5d26] border-none hover:bg-[#e6b814] hidden md:block">Plant a Tree</a>
+
+            <label for="my-drawer" class="btn btn-square btn-ghost text-white md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </label>
         </div>
     </header>
 
+    <div class="drawer drawer-end md:hidden">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+            </div> 
+        <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#plant">Plant a Tree</a></li>
+                <li><a href="#plant" class="btn bg-[#f9c522] text-black border-none hover:bg-yellow-400 mt-4">Plant a Tree</a></li>
+            </ul>
+        </div>
+    </div>
+
     <main class="pt-[91px]">
-        <section class="bg-[#d7f9e8] h-[383px] flex items-center justify-center relative overflow-hidden px-4">
-            <img src="images/hero-leaf1.png" alt="Left Leaf" class="h-full absolute left-0 top-0 object-cover">
-            <img src="images/hero-leaf2.png" alt="Right Leaf" class="h-full absolute right-0 top-0 object-cover">
+        <section class="bg-[#d7f9e8] h-auto md:h-[383px] flex flex-col md:flex-row items-center justify-center relative overflow-hidden px-4 py-8">
+            <img src="images/hero-leaf1.png" alt="Left Leaf" class="hidden md:block h-full absolute left-0 top-0 object-cover">
+            <img src="images/hero-leaf2.png" alt="Right Leaf" class="hidden md:block h-full absolute right-0 top-0 object-cover">
             <div class="z-10 text-center max-w-2xl px-4">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#1e5c3e]">Plant a Tree, Grow a Future</h1>
                 <p class="text-lg md:text-xl mb-8 text-[#1e5c3e] leading-relaxed">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
                 <button class="btn bg-[#f9c522] text-black border-none hover:bg-yellow-400">Get Involved</button>
             </div>
         </section>
+        
         <section class="container mx-auto max-w-[1650px] px-4 py-16">
             <h2 class="text-4xl font-bold text-center mb-12 text-green-800">Choose Your Trees</h2>
             <div class="flex flex-col lg:flex-row gap-10">
                 <div class="w-full lg:w-1/4">
                     <h3 class="text-2xl font-semibold mb-4">Categories</h3>
                     <div id="category-container" class="space-y-2">
-                        </div>
+                    </div>
                 </div>
-
                 <div class="w-full lg:w-3/4 flex flex-col xl:flex-row gap-10">
                     <div class="w-full xl:w-2/3">
                         <div id="spinner" class="text-center my-10 hidden">
                             <span class="loading loading-spinner loading-lg text-success"></span>
                         </div>
                         <div id="tree-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            </div>
+                        </div>
                     </div>
                     <div class="w-full xl:w-1/3 mt-8 xl:mt-0">
                         <h2 class="text-3xl font-bold mb-6 text-green-800">Your Cart</h2>
                         <div class="bg-white p-6 rounded-lg shadow-lg">
                             <ul id="cart-list" class="space-y-4">
-                                </ul>
+                            </ul>
                             <div class="divider"></div>
                             <div class="flex justify-between items-center font-bold text-xl">
                                 <span>Total:</span>
@@ -77,7 +95,7 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-green-800">About Our Campaign</h2>
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div class="md:w-1/2">
-                    <img src="images/about.png" alt="About Campaign" class="rounded-lg shadow-lg">
+                    <img src="images/about.png" alt="About Campaign" class="rounded-lg shadow-lg w-full">
                 </div>
                 <div class="md:w-1/2">
                     <p class="text-lg text-gray-700 mb-4">Our Green Earth campaign is dedicated to a single, powerful mission: to plant millions of trees worldwide. We believe that every tree planted is a step towards a sustainable future. Through community engagement, partnerships, and public awareness, we aim to restore forests, improve air quality, and create a better home for all living beings.</p>
@@ -145,7 +163,7 @@
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
             <div id="modal-content">
-                </div>
+            </div>
         </div>
     </dialog>
 
