@@ -1,4 +1,4 @@
-// A reliable data source with images and relevant data
+const API_ENDPOINT = 'https://openapi.programming-hero.com/api/plants';
 const plantsData = [
     {
         id: 1,
